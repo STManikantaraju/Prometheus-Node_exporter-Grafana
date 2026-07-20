@@ -2,6 +2,7 @@
 sudo useradd --no-create-home --shell /bin/false node_exporter
 
 wget https://github.com/prometheus/node_exporter/releases/download/v1.9.1/node_exporter-1.9.1.linux-amd64.tar.gz
+(replace wiht latest version of node-exporter, if any issue with mentioned version)
 
 tar -xvf node_exporter-1.9.1.linux-amd64.tar.gz
 
