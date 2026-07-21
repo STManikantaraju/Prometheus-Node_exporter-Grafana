@@ -4,6 +4,8 @@
 
 userdatascript:
 wget https://github.com/STManikantaraju/Prometheus-Node_exporter-Grafana/blob/main/install_nodeexpo.sh
+
+wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-Grafana/refs/heads/main/install_nodeexpo.sh
 ./install_nodeexpo.sh
 
 # launch template
