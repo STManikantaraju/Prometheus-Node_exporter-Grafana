@@ -3,8 +3,9 @@
 # installation s3
 
 userdatascript:
-wget https://github.com/STManikantaraju/Prometheus-Node_exporter-Grafana/blob/main/install_nodeexpo.sh
+# Access_Link: wget https://github.com/STManikantaraju/Prometheus-Node_exporter-Grafana/blob/main/install_nodeexpo.sh
 
+# Raw_link for download or run script:
 wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-Grafana/refs/heads/main/install_nodeexpo.sh
 ./install_nodeexpo.sh
 
