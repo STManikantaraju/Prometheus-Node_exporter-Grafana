@@ -1,5 +1,19 @@
 #!/bin/bash
 
+
+# after Prometheus installation need to update the Target_System's_Pubic_IP in 
+sudo vi /etc/prometheus/prometheus.yml
+
+# & then, may need to run the below commands again
+sudo systemctl daemon-reload
+sudo systemctl enable prometheus
+sudo systemctl start prometheus
+sudo systemctl status prometheus
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+#!/bin/bash
+
 sudo useradd --no-create-home --shell /bin/false prometheus
 wget https://github.com/prometheus/prometheus/releases/download/v3.4.1/prometheus-3.4.1.linux-amd64.tar.gz
 
