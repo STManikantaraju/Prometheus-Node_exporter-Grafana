@@ -1,15 +1,37 @@
 #!/bin/bash
+wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-Grafana/refs/heads/main/install_Prometheus%26Grafana.sh
 
+chmod +x install_Prometheus%26Grafana.sh && ./install_Prometheus%26Grafana.sh
+
+# To print PUBLIC_IP
+echo "================================================================================"
+echo "================================================================================"
+echo "================================================================================"
+echo "YOUR SYSTEM PUBLIC_IP = $(curl s ifconfig.me)"
+echo "http://$(curl -s ifconfig.me):9090"
+echo "================================================================================"
+echo "================================================================================"
+echo "================================================================================"
 
 # after Prometheus installation need to update the Target_System's_Pubic_IP in 
 sudo vi /etc/prometheus/prometheus.yml
 
 # & then, may need to run the below commands again
 sudo systemctl daemon-reload
-sudo systemctl enable prometheus
-sudo systemctl start prometheus
+sudo systemctl restart prometheus
 sudo systemctl status prometheus
 
+sudo systemctl restart grafana-server
+sudo systemctl status grafana-server
+http://GRAFANA-IP:3000
+
+Add Data Source -> Prometheus -> http://localhost:9090
+
+Import dashboard:
+1860
+
+Stress CPU Demo On target server:
+yes > /dev/null
 --------------------------------------------------------------------------------------------------------------------------------
 
 #!/bin/bash
@@ -72,3 +94,37 @@ sudo systemctl daemon-reload
 sudo systemctl enable prometheus
 sudo systemctl start prometheus
 sudo systemctl status prometheus
+
+# To print PUBLIC_IP Prometheus port
+echo "================================================================================"
+echo "================================================================================"
+echo "================================================================================"
+echo "YOUR SYSTEM PUBLIC_IP for Prometheus access = $(curl s ifconfig.me)"
+echo "http://$(curl -s ifconfig.me):9090"
+echo "================================================================================"
+echo "================================================================================"
+echo "================================================================================"
+
+#      **********************Grafana Installation********************************
+
+sudo apt update
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise_12.0.1_amd64.deb
+sudo apt-get install -y adduser libfontconfig1 musl
+sudo dpkg -i grafana-enterprise_12.0.1_amd64.deb
+sudo apt install -y musl
+sudo apt install -f
+
+sudo systemctl daemon-reload
+sudo systemctl enable grafana-server
+sudo systemctl start grafana-server
+sudo systemctl status grafana-server
+
+# To print PUBLIC_IP with Grafana port
+echo "================================================================================"
+echo "================================================================================"
+echo "================================================================================"
+echo "YOUR SYSTEM PUBLIC_IP for Grafana access = $(curl s ifconfig.me)"
+echo "http://$(curl -s ifconfig.me):3000"
+echo "================================================================================"
+echo "================================================================================"
+echo "================================================================================"
