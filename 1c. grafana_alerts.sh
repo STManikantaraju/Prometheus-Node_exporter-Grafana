@@ -1,3 +1,4 @@
+configure alert
 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[1m]))* 100)
 
 
@@ -18,6 +19,9 @@ from_name = Grafana
 sudo systemctl restart grafana-server
 sudo systemctl status grafana-server
 
-configure alert
+# Apply load on Tarket node
+yes > /dev/null
+
+# then check in Grafana portal for load update, also u may get mail laert when load high & resolved / load get down.
 
 
