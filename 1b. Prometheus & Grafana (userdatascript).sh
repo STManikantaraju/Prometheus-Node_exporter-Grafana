@@ -129,3 +129,14 @@ echo "http://$(curl -s ifconfig.me):3000"
 echo "================================================================================"
 echo "================================================================================"
 echo "================================================================================"
+
+----------------------------------------------------------------------------------------------------------------------
+
+# to check the output complete
+sudo cat /var/log/cloud-init-output.log
+or
+# to check the output page-by-page
+sudo less /var/log/cloud-init-output.log
+or
+# View the downloaded raw script:
+sudo cat /var/lib/cloud/instance/user-data.txt
