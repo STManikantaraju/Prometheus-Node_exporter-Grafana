@@ -34,7 +34,7 @@ sudo chown -R prometheus:prometheus /var/lib/prometheus
 sudo chown -R prometheus:prometheus /etc/prometheus
 sudo chown prometheus:prometheus /usr/local/bin/prometheus
 
-sudo vi /etc/systemd/system/prometheus.service
+cat << 'EOF' > /etc/systemd/system/prometheus.service
 
 [Unit]
 Description=Prometheus
@@ -52,10 +52,9 @@ ExecStart=/usr/local/bin/prometheus \
 
 [Install]
 WantedBy=multi-user.target
-
+EOF
 
 sudo systemctl daemon-reload
 sudo systemctl enable prometheus
 sudo systemctl start prometheus
-
 sudo systemctl status prometheus
