@@ -13,10 +13,16 @@ wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-
 chmod +x install_nodeexpo.sh && ./install_nodeexpo.sh
 
 # To print PUBLIC_IP
-echo " "
-echo "UR SYSTEM PUBLIC_IP = $(curl s ifconfig.me)"
+echo "================================================================================"
+echo "================================================================================"
+echo "================================================================================"
+echo "YOUR SYSTEM PUBLIC_IP = $(curl s ifconfig.me)"
 echo "http://$(curl -s ifconfig.me):9100/metrics"
-OR
+echo "================================================================================"
+echo "================================================================================"
+echo "================================================================================"
+
+OR one more command to generae Public_IP after instance launch
 echo "$(wget -qO- icanhazip.com)"
 # launch template
 
