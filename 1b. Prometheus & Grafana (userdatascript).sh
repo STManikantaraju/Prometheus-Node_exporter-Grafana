@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo su
 wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-Grafana/refs/heads/main/install_Prometheus_Grafana.sh
 
 chmod +x install_Prometheus_Grafana.sh && ./install_Prometheus_Grafana.sh
