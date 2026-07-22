@@ -1,7 +1,7 @@
 #!/bin/bash
-wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-Grafana/refs/heads/main/install_Prometheus%26Grafana.sh
+wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-Grafana/refs/heads/main/install_Prometheus_Grafana.sh
 
-chmod +x install_Prometheus%26Grafana.sh && ./install_Prometheus%26Grafana.sh
+chmod +x install_Prometheus%26Grafana.sh && ./install_Prometheus_Grafana.sh
 
 # To print PUBLIC_IP
 echo "================================================================================"
