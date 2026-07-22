@@ -5,12 +5,8 @@ chmod +x install_Prometheus%26Grafana.sh && ./install_Prometheus%26Grafana.sh
 
 # To print PUBLIC_IP
 echo "================================================================================"
-echo "================================================================================"
-echo "================================================================================"
 echo "YOUR SYSTEM PUBLIC_IP = $(curl s ifconfig.me)"
 echo "http://$(curl -s ifconfig.me):9090"
-echo "================================================================================"
-echo "================================================================================"
 echo "================================================================================"
 
 # after Prometheus installation need to update the Target_System's_Pubic_IP in 
@@ -23,7 +19,12 @@ sudo systemctl status prometheus
 
 sudo systemctl restart grafana-server
 sudo systemctl status grafana-server
-http://GRAFANA-IP:3000
+
+# To print PUBLIC_IP with Grafana port
+echo "================================================================================"
+echo "YOUR SYSTEM PUBLIC_IP for Grafana access = $(curl s ifconfig.me)"
+echo "http://$(curl -s ifconfig.me):3000"
+echo "================================================================================"
 
 Add Data Source -> Prometheus -> http://localhost:9090
 
