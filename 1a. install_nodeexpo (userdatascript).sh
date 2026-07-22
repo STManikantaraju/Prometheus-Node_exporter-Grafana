@@ -10,6 +10,7 @@ sudo su
 
 # Raw_link for download or run script:
 wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-Grafana/refs/heads/main/install_nodeexpo.sh
+# (replace wiht latest version of node-exporter, if any issue with mentioned version)
 
 chmod +x install_nodeexpo.sh && ./install_nodeexpo.sh
 
