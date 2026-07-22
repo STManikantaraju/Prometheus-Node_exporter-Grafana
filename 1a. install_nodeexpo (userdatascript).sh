@@ -5,10 +5,19 @@
 userdatascript:
 # Access_Link: wget https://github.com/STManikantaraju/Prometheus-Node_exporter-Grafana/blob/main/install_nodeexpo.sh
 
+#!/bin/bash
+
 # Raw_link for download or run script:
 wget https://raw.githubusercontent.com/STManikantaraju/Prometheus-Node_exporter-Grafana/refs/heads/main/install_nodeexpo.sh
-./install_nodeexpo.sh
 
+chmod +x install_nodeexpo.sh && ./install_nodeexpo.sh
+
+# To print PUBLIC_IP
+echo " "
+echo "UR SYSTEM PUBLIC_IP = $(curl s ifconfig.me)"
+echo "http://$(curl -s ifconfig.me):9100/metrics"
+OR
+echo "$(wget -qO- icanhazip.com)"
 # launch template
 
 ---------------------------------------------------------------------------
@@ -87,7 +96,12 @@ systemctl enable node_exporter
 systemctl start node_exporter
 systemctl status node_exporter
 
-# to check the output
+# to check the output complete
 sudo cat /var/log/cloud-init-output.log
 or
+# to check the output page-by-page
 sudo less /var/log/cloud-init-output.log
+or
+# View the downloaded raw script:
+sudo cat /var/lib/cloud/instance/user-data.txt
+
